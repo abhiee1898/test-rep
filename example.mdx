@@ -1,6 +1,3 @@
-<div data-type="ainode">
-</div>
-
 # Understanding JWT in Next.js with Firebase Functions
 
 JSON Web Tokens (JWT) are a popular method for securely transmitting information between parties as a JSON object. This section will guide you on how to implement JWT in a Next.js application using Firebase Functions.
@@ -49,7 +46,7 @@ function verifyToken(token, secret) {
 
 Secure your Next.js application by attaching JWT to your HTTP requests. This ensures that only authenticated users can access certain resources.
 
-<div stream-node-id="kiiQvAQQZqJs_node_15" activeindex="0" tabs="Request 1" data-type="custom-request" class="custom-request">
+<div stream-node-id="kiiQvAQQZqJs_node_15" activeindex="0" tabs="nextjs,curl" data-type="custom-request" class="custom-request">
 <div tabindex="0" data-type="request-content" class="request-content"><pre stream-node-id="kiiQvAQQZqJs_node_15"><code class="language-javascript">// Attaching JWT to HTTP requests
 fetch('https://your-api-url.com/resource', {
   method: 'GET',
@@ -57,7 +54,8 @@ fetch('https://your-api-url.com/resource', {
     Authorization: `Bearer ${yourToken}`,
     'Content-Type': 'application/json'
   }
-})</code></pre></div>
+})</code></pre></div><div tabindex="1" data-type="request-content" class="request-content"><pre><code class="language-javascript">// New request code here
+curl - </code></pre></div>
 </div>
 
 <div stream-node-id="kiiQvAQQZqJs_node_16" data-type="callout-idea">
@@ -71,3 +69,7 @@ Do not store JWT in local storage or any location accessible by JavaScript to pr
 ## Conclusion
 
 Implementing JWT in a Next.js application with Firebase Functions enhances security and scalability. By following this guide, you can effectively handle authentication and secure data transmission in your applications.
+
+<div data-type="table-wrapper" class="table-wrapper-container">
+<table style="min-width: 250px"><colgroup><col style="min-width: 50px"><col style="min-width: 50px"><col style="min-width: 50px"><col style="min-width: 50px"><col style="min-width: 50px"></colgroup><tbody><tr><th colspan="1" rowspan="1"><p></p></th><th colspan="1" rowspan="1"><p></p></th><th colspan="1" rowspan="1"><p></p></th><th colspan="1" rowspan="1"><p></p></th><th colspan="1" rowspan="1"><p></p></th></tr><tr><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td></tr><tr><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td></tr><tr><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td></tr><tr><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td><td colspan="1" rowspan="1"><p></p></td></tr></tbody></table>
+</div>
