@@ -1,0 +1,73 @@
+<div data-type="ainode">
+</div>
+
+# Understanding JWT in Next.js with Firebase Functions
+
+JSON Web Tokens (JWT) are a popular method for securely transmitting information between parties as a JSON object. This section will guide you on how to implement JWT in a Next.js application using Firebase Functions.
+
+## What is JWT?
+
+JWT is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed.
+
+## Why Use JWT in Next.js?
+
+JWT can be used for authentication and secure information exchange in a Next.js application. It allows you to create a stateless authentication mechanism, which is beneficial for scalability and simplicity.
+
+## Setting Up Firebase Functions
+
+Firebase Functions allow you to run backend code in response to events triggered by Firebase features and HTTPS requests. Setting up Firebase Functions involves initializing your Firebase project and developing functions that can handle JWT.
+
+- [ ] Initialize Firebase project
+
+- [ ] Develop Firebase Functions
+
+- [ ] Deploy Firebase Functions
+
+### Creating and Verifying JWT
+
+In a Next.js application, you can create and verify JWT using libraries like \`jsonwebtoken\`. Firebase Functions will handle the verification and issuance of these tokens.
+
+```javascript
+const jwt = require('jsonwebtoken');
+
+// Function to create a JWT
+function createToken(payload, secret, expiresIn) {
+  return jwt.sign(payload, secret, { expiresIn });
+}
+
+// Function to verify a JWT
+function verifyToken(token, secret) {
+  try {
+    return jwt.verify(token, secret);
+  } catch (err) {
+    return null;
+  }
+}
+```
+
+### Secure HTTP Requests with JWT
+
+Secure your Next.js application by attaching JWT to your HTTP requests. This ensures that only authenticated users can access certain resources.
+
+<div stream-node-id="kiiQvAQQZqJs_node_15" activeindex="0" tabs="Request 1" data-type="custom-request" class="custom-request">
+<div tabindex="0" data-type="request-content" class="request-content"><pre stream-node-id="kiiQvAQQZqJs_node_15"><code class="language-javascript">// Attaching JWT to HTTP requests
+fetch('https://your-api-url.com/resource', {
+  method: 'GET',
+  headers: {
+    Authorization: `Bearer ${yourToken}`,
+    'Content-Type': 'application/json'
+  }
+})</code></pre></div>
+</div>
+
+<div stream-node-id="kiiQvAQQZqJs_node_16" data-type="callout-idea">
+Always validate JWT on the server-side to ensure the token is legitimate and not expired.
+</div>
+
+<div stream-node-id="kiiQvAQQZqJs_node_17" data-type="callout-warning">
+Do not store JWT in local storage or any location accessible by JavaScript to prevent XSS attacks.
+</div>
+
+## Conclusion
+
+Implementing JWT in a Next.js application with Firebase Functions enhances security and scalability. By following this guide, you can effectively handle authentication and secure data transmission in your applications.
